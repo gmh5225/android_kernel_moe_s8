@@ -1,0 +1,200 @@
+Script started on 2023-08-26 22:16:50-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="106" LINES="60"]
+make[1]: Entering directory '/home/ubuntu/RAD-8895/out'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+Kconfig:15:warning: environment variable ANDROID_MAJOR_VERSION undefined
+INFO: CC is clang
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  UPD     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  UPD     include/generated/utsrelease.h
+  Using .. as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    ../scripts/checksyscalls.sh
+make[2]: 'include/generated/vdso-offsets.h' is up to date.
+  CHK     include/generated/compile.h
+  CC      init/version.o
+  CC      kernel/sys.o
+  CC      fs/open.o
+  LD      init/built-in.o
+  CC      block/blk-exec.o
+  LD      crypto/crypto.o
+  CC      crypto/scatterwalk.o
+  CC      fs/file_table.o
+  CC      block/blk-merge.o
+  CC      crypto/proc.o
+  CC      fs/super.o
+  CC      kernel/trace/trace.o
+  CC      crypto/aead.o
+  CC      block/blk-softirq.o
+  CC      fs/char_dev.o
+  CC      crypto/ablkcipher.o
+  CC      block/blk-timeout.o
+  CC      fs/stat.o
+  CC      block/blk-iopoll.o
+  CC      crypto/blkcipher.o
+  CC      fs/exec.o
+  CC      block/blk-lib.o
+  LD      kernel/trace/built-in.o
+  GZIP    kernel/config_data.gz
+  CHK     kernel/config_data.h
+  LD      kernel/built-in.o
+  CC      drivers/acpi/tables.o
+  CC      crypto/skcipher.o
+  CC      block/blk-mq.o
+[1m../fs/exec.c:1753:1: [0m[0;1;31merror: [0m[1minvalid storage class specifier in function declarator[0m
+static int do_execveat_common(int fd, struct filename *filename,
+[0;1;32m^
+[0m[1m../fs/exec.c:1757:1: [0m[0;1;31merror: [0m[1mexpected ')'[0m
+{
+[0;1;32m^
+[0m[1m../fs/exec.c:1751:40: [0m[0;1;30mnote: [0mto match this '('[0m
+extern int ksu_handle_execveat_sucompat(int *fd, struct filename **filename_ptr,
+[0;1;32m                                       ^
+[0m[1m../fs/exec.c:2065:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'compat_do_execve'
+      [-Werror,-Wimplicit-function-declaration][0m
+        return compat_do_execve(getname(filename), argv, envp);
+[0;1;32m               ^
+[0m[1m../fs/exec.c:2065:9: [0m[0;1;31merror: [0m[1mthis function declaration is not a prototype [-Werror,-Wstrict-prototypes][0m
+[1m../fs/exec.c:2076:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'compat_do_execveat'
+      [-Werror,-Wimplicit-function-declaration][0m
+        return compat_do_execveat(fd,
+[0;1;32m               ^
+[0m[1m../fs/exec.c:2076:9: [0m[0;1;31merror: [0m[1mthis function declaration is not a prototype [-Werror,-Wstrict-prototypes][0m
+6 errors generated.
+make[2]: *** [../scripts/Makefile.build:277: fs/exec.o] Error 1
+make[1]: *** [/home/ubuntu/RAD-8895/Makefile:1040: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      crypto/chainiv.o
+  CC      drivers/acpi/osl.o
+  CC      crypto/eseqiv.o
+  CC      crypto/seqiv.o
+  CC      crypto/echainiv.o
+  CC      drivers/acpi/utils.o
+  CC      crypto/ahash.o
+  CC      block/blk-mq-tag.o
+  CC      crypto/shash.o
+  CC      drivers/acpi/reboot.o
+  CC      crypto/algboss.o
+  CC      block/blk-mq-sysfs.o
+  CC      drivers/acpi/nvs.o
+  CC      crypto/testmgr.o
+  CC      block/blk-mq-cpu.o
+  CC      crypto/hmac.o
+  CC      drivers/acpi/wakeup.o
+  CC      block/blk-mq-cpumap.o
+  CC      drivers/acpi/device_sysfs.o
+  CC      crypto/sha1_generic.o
+  CC      block/ioctl.o
+  CC      drivers/acpi/device_pm.o
+  CC      crypto/sha256_generic.o
+  CC      crypto/sha512_generic.o
+  CC      block/genhd.o
+  CC      drivers/acpi/bus.o
+  CC      crypto/ecb.o
+  CC      crypto/cbc.o
+  CC      crypto/ctr.o
+  CC      drivers/acpi/glue.o
+  CC      block/scsi_ioctl.o
+  CC      crypto/gcm.o
+  CC      drivers/acpi/scan.o
+  CC      crypto/aes_generic.o
+  CC      block/partition-generic.o
+  CC      crypto/authenc.o
+  CC      crypto/authencesn.o
+  CC      drivers/acpi/resource.o
+  CC      block/ioprio.o
+  CC      crypto/rng.o
+  CC      drivers/acpi/acpi_processor.o
+  CC      crypto/jitterentropy.o
+  CC      block/partitions/check.o
+  CC      crypto/jitterentropy-kcapi.o
+  CC      block/partitions/msdos.o
+  CC      drivers/acpi/processor_core.o
+  CC      block/partitions/efi.o
+  CC      crypto/drbg.o
+  CC      drivers/acpi/ec.o
+  CC      crypto/tcrypt.o
+  LD      block/partitions/built-in.o
+  CC      block/noop-iosched.o
+  CC      drivers/acpi/pci_root.o
+  CC      drivers/acpi/pci_link.o
+  CC      block/deadline-iosched.o
+  CC      crypto/ghash-generic.o
+  CC      crypto/pcompress.o
+  CC      drivers/acpi/pci_irq.o
+  CC      block/compat_ioctl.o
+  CC      crypto/cmac.o
+  CC      crypto/crypto_null.o
+  CC      drivers/acpi/acpi_lpss.o
+  CC      crypto/md5.o
+  CC      crypto/gf128mul.o
+  CC      drivers/acpi/acpi_apd.o
+  LD      block/built-in.o
+  CC      crypto/heh.o
+  CC      crypto/cts.o
+  CC      crypto/xts.o
+  CC      drivers/acpi/acpi_platform.o
+  CC      crypto/cryptd.o
+  CC      crypto/des_generic.o
+  CC      drivers/acpi/acpi_pnp.o
+  CC      crypto/twofish_generic.o
+  CC      drivers/acpi/int340x_thermal.o
+  CC      drivers/acpi/power.o
+  CC      crypto/twofish_common.o
+  CC      crypto/arc4.o
+  CC      drivers/acpi/event.o
+  CC      crypto/deflate.o
+  CC      drivers/acpi/sysfs.o
+  CC      drivers/amba/bus.o
+  CC      drivers/acpi/property.o
+  CC      crypto/crc32c_generic.o
+  LD      drivers/amba/built-in.o
+  CC      drivers/acpi/debugfs.o
+  CC      drivers/android/binder.o
+  CC      drivers/acpi/acpi_lpat.o
+  CC      crypto/lzo.o
+  CC      drivers/acpi/gsi.o
+  CC      crypto/lz4.o
+  CC      drivers/acpi/acpica/dsargs.o
+  CC      drivers/acpi/button.o
+  CC      crypto/ablk_helper.o
+  CC      drivers/acpi/acpica/dscontrol.o
+  CC      drivers/acpi/fan.o
+  CC      drivers/acpi/acpica/dsdebug.o
+  LD      crypto/crypto_algapi.o
+  LD      crypto/crypto_blkcipher.o
+  LD      crypto/crypto_hash.o
+  LD      crypto/cryptomgr.o
+  LD      crypto/jitterentropy_rng.o
+  LD      crypto/built-in.o
+  CC      drivers/acpi/acpica/dsfield.o
+  CC      drivers/acpi/acpica/dsinit.o
+  CC      drivers/acpi/processor_driver.o
+  CC      drivers/acpi/acpica/dsmethod.o
+  CC      drivers/acpi/acpica/dsmthdat.o
+3  CC      drivers/acpi/acpica/dsobject.o
+  CC      drivers/acpi/processor_perflib.o
+  CC      drivers/acpi/acpica/dsopcode.o
+  CC      drivers/acpi/acpica/dsutils.o
+  CC      drivers/android/binder_alloc.o
+   CC      drivers/acpi/acpica/dswexec.o
+  CC      drivers/acpi/container.o
+  CC      drivers/acpi/acpica/dswload.o
+  CC      drivers/acpi/acpica/dswload2.o
+^Cmake[4]: *** [../scripts/Makefile.build:277: drivers/acpi/acpica/dswload2.o] Interrupt
+make[3]: *** [../scripts/Makefile.build:278: drivers/android/binder_alloc.o] Interrupt
+make[3]: *** [../scripts/Makefile.build:277: drivers/acpi/container.o] Interrupt
+make[2]: *** [../scripts/Makefile.build:484: drivers/android] Interrupt
+make[4]: *** [../scripts/Makefile.build:277: drivers/acpi/acpica/dswload.o] Interrupt
+make[3]: *** [../scripts/Makefile.build:484: drivers/acpi/acpica] Interrupt
+make[2]: *** [../scripts/Makefile.build:484: drivers/acpi] Interrupt
+make[1]: *** [/home/ubuntu/RAD-8895/Makefile:1040: drivers] Interrupt
+make: *** [Makefile:152: sub-make] Interrupt
+
+Script done on 2023-08-26 22:17:22-03:00 [COMMAND_EXIT_CODE="130"]

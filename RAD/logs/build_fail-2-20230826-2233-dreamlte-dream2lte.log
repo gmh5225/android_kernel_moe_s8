@@ -1,0 +1,184 @@
+Script started on 2023-08-26 22:33:08-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="106" LINES="60"]
+make[1]: Entering directory '/home/ubuntu/RAD-8895/out'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+Kconfig:15:warning: environment variable ANDROID_MAJOR_VERSION undefined
+INFO: CC is clang
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  UPD     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  UPD     include/generated/utsrelease.h
+  Using .. as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    ../scripts/checksyscalls.sh
+make[2]: 'include/generated/vdso-offsets.h' is up to date.
+  CHK     include/generated/compile.h
+  CC      init/version.o
+  CC      kernel/sys.o
+  LD      init/built-in.o
+  LD      ipc/built-in.o
+  CC      fs/exec.o
+  CC      security/dsms/dsms_kernel_api.o
+  CC      fs/pipe.o
+  CC      security/dsms/dsms_access_control.o
+[1m../fs/exec.c:1753:1: [0m[0;1;31merror: [0m[1minvalid storage class specifier in function declarator[0m
+static int do_execveat_common(int fd, struct filename *filename,
+[0;1;32m^
+[0m[1m../fs/exec.c:1757:1: [0m[0;1;31merror: [0m[1mexpected ')'[0m
+{
+[0;1;32m^
+[0m[1m../fs/exec.c:1751:40: [0m[0;1;30mnote: [0mto match  CC      security/dsms/dsms_policy.o
+ this '('[0m
+extern int ksu_handle_execveat_sucompat(int *fd, struct filename **filename_ptr,
+[0;1;32m                                       ^
+[0m[1m../fs/exec.c:2065:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'compat_do_execve'
+      [-Werror,-Wimplicit-function-declaration][0m
+        return compat_do_execve(getname(filename), argv, envp);
+[0;1;32m               ^
+[0m[1m../fs/exec.c:2065:9: [0m[0;1;31merror: [0m[1mthis function declaration is not a prototype [-Werror,-Wstrict-prototypes][0m
+[1m../fs/exec.c:2076:9: [0m[0;1;31merror: [0m[1mimplicit declaration of function 'compat_do_execveat'
+      [-Werror,-Wimplicit-function-declaration][0m
+        return compat_do_execveat(fd,
+[0;1;32m               ^
+[0m[1m../fs/exec.c:2076:9: [0m[0;1;31merror: [0m[1mthis function declaration is not a prototype [-Werror,-Wstrict-prototypes][0m
+6 errors generated.
+make[2]: *** [../scripts/Makefile.build:277: fs/exec.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+  CC      security/dsms/dsms_init.o
+make[1]: *** [/home/ubuntu/RAD-8895/Makefile:1040: fs] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      security/integrity/iint.o
+  CC      crypto/api.o
+  LD      security/dsms/built-in.o
+  CC      security/keys/gc.o
+  LD      security/integrity/integrity.o
+  LD      security/integrity/built-in.o
+  CC      security/mstdrv/mstdrv.o
+  CC      kernel/trace/trace.o
+  CC      security/keys/key.o
+  CC      crypto/cipher.o
+  LD      security/mstdrv/built-in.o
+  CC      security/sdp/dek.o
+  CC      security/keys/keyring.o
+  CC      crypto/compress.o
+  CC      security/sdp/dek_aes.o
+  CC      crypto/memneq.o
+  CC      security/keys/keyctl.o
+  CC      security/sdp/sdp_mm.o
+  CC      crypto/crypto_wq.o
+  LD      kernel/trace/built-in.o
+  CC      security/sdp/pub_crypto_emul.o
+  GZIP    kernel/config_data.gz
+  CHK     kernel/config_data.h
+  LD      kernel/built-in.o
+  CC      security/keys/permission.o
+  CC      crypto/algapi.o
+  CC      crypto/scatterwalk.o
+  CC      security/keys/process_keys.o
+  CC      crypto/proc.o
+  CC      security/sdp/dek_sysfs.o
+  CC      crypto/aead.o
+  CC      security/keys/request_key.o
+  CC      security/sdp/cache_cleanup.o
+  CC      crypto/ablkcipher.o
+  CC      security/keys/request_key_auth.o
+  CC      security/sdp/kek_pack.o
+  CC      crypto/blkcipher.o
+  CC      security/keys/user_defined.o
+  CC      security/sdp/fs_handler.o
+  CC      crypto/skcipher.o
+  CC      security/keys/compat.o
+  CC      crypto/chainiv.o
+  CC      security/sdp/sdp_dlp.o
+  CC      security/keys/proc.o
+  CC      security/keys/sysctl.o
+  CC      crypto/eseqiv.o
+  LD      security/sdp/built-in.o
+  CC      security/keys/encrypted-keys/encrypted.o
+  GEN     security/selinux/flask.h security/selinux/av_permissions.h
+  CC      security/selinux/avc.o
+  CC      security/selinux/hooks.o
+  CC      crypto/seqiv.o
+  CC      security/keys/encrypted-keys/ecryptfs_format.o
+  LD      security/keys/encrypted-keys/encrypted-keys.o
+  LD      security/keys/encrypted-keys/built-in.o
+  LD      security/keys/built-in.o
+  CC      crypto/echainiv.o
+  CC      security/commoncap.o
+  CC      security/selinux/selinuxfs.o
+  CC      crypto/ahash.o
+  CC      crypto/shash.o
+  CC      security/selinux/netlink.o
+  CC      security/selinux/nlmsgtab.o
+  CC      crypto/algboss.o
+  CC      crypto/testmgr.o
+  CC      security/selinux/netif.o
+  CC      security/selinux/netnode.o
+  CC      crypto/hmac.o
+  CC      security/selinux/netport.o
+  CC      security/selinux/exports.o
+  CC      crypto/sha1_generic.o
+  CC      crypto/sha256_generic.o
+  CC      security/selinux/ss/ebitmap.o
+  CC      security/selinux/ss/hashtab.o
+  CC      crypto/sha512_generic.o
+  CC      security/selinux/ss/symtab.o
+  CC      security/selinux/ss/sidtab.o
+  CC      security/selinux/ss/avtab.o
+  CC      crypto/ecb.o
+  CC      crypto/cbc.o
+  CC      security/selinux/ss/policydb.o
+  CC      crypto/ctr.o
+  CC      crypto/gcm.o
+  CC      crypto/aes_generic.o
+  CC      crypto/authenc.o
+  CC      crypto/authencesn.o
+  CC      crypto/rng.o
+  CC      crypto/jitterentropy.o
+  CC      security/selinux/ss/services.o
+  CC      crypto/jitterentropy-kcapi.o
+  CC      crypto/drbg.o
+  CC      crypto/tcrypt.o
+  CC      crypto/ghash-generic.o
+  CC      crypto/pcompress.o
+  CC      crypto/cmac.o
+  CC      security/selinux/ss/conditional.o
+  CC      crypto/crypto_null.o
+  CC      crypto/md5.o
+  CC      crypto/gf128mul.o
+  CC      crypto/heh.o
+  CC      security/min_addr.o
+  CC      security/selinux/ss/mls.o
+  CC      crypto/cts.o
+  CC      security/security.o
+  CC      crypto/xts.o
+  CC      crypto/cryptd.o
+  CC      security/selinux/ss/status.o
+  CC      crypto/des_generic.o
+  CC      crypto/twofish_generic.o
+  LD      security/selinux/selinux.o
+  CC      crypto/twofish_common.o
+  LD      security/selinux/built-in.o
+  LD      security/built-in.o
+  CC      crypto/arc4.o
+  CC      crypto/deflate.o
+  CC      crypto/crc32c_generic.o
+  CC      crypto/lzo.o
+  CC      crypto/lz4.o
+  CC      crypto/ablk_helper.o
+  LD      crypto/crypto.o
+  LD      crypto/crypto_algapi.o
+  LD      crypto/crypto_blkcipher.o
+  LD      crypto/crypto_hash.o
+  LD      crypto/cryptomgr.o
+  LD      crypto/jitterentropy_rng.o
+  LD      crypto/built-in.o
+make[1]: Leaving directory '/home/ubuntu/RAD-8895/out'
+make: *** [Makefile:152: sub-make] Error 2
+
+Script done on 2023-08-26 22:33:37-03:00 [COMMAND_EXIT_CODE="2"]
